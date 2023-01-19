@@ -1,8 +1,23 @@
 <template>
-  <div id="app">
+ 
     <button type="button" class="btn" @click="showModal">Open Modal!</button>
-    <Modal v-show="isModalVisible" @close="closeModal"/>
-  </div>
+<Modal
+  v-show="isModalVisible"
+  @close="closeModal"
+>
+  <template v-slot:header>
+    This is a new modal header.
+  </template>
+
+  <template v-slot:body>
+    This is a new modal body.
+  </template>
+
+  <template v-slot:footer>
+    This is a new modal footer.
+  </template>
+</Modal>  
+  
 </template>
 
 <script>
@@ -27,5 +42,11 @@ export default {
 </script>
 
 <style>
+.btn{
+  z-index:0;
+  position: absolute;
+  left:50%;
+  top:40%;
 
+}
 </style>
